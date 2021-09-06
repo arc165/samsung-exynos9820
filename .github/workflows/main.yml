@@ -3,7 +3,7 @@ name: Build
 on: [push]
 
 env:
-  TOOLCHAIN: default
+  TOOLCHAIN: cruel
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        model: [ "G973F" ]
+        model: [ "G970F" ]
 
     steps:
     - uses: actions/checkout@v2
@@ -54,6 +54,18 @@ jobs:
                      +ntfs                     \
                      +morosound                \
                      +boeffla_wl_blocker       \
+                     +io_bfq                   \
+                     +io_maple                 \
+                     +io_fiops                 \
+                     +io_sio                   \
+                     +io_zen                   \
+                     +io_cfq                   \
+                     +tcp_cubic                \
+                     +tcp_westwood             \
+                     +tcp_htcp                 \
+                     +tcp_bbr                  \
+                     +tcp_bic                  \
+                     +nodebug                  \
         2>&1 | tee config.info
     - name: Kernel Build
       run: ./cruelbuild :build
