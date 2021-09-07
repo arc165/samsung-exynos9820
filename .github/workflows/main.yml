@@ -43,7 +43,7 @@ jobs:
       run: |
         ./cruelbuild config                    \
                      model=${{ matrix.model }} \
-                     name="CRUEL-v3.8"         \
+                     name="CRUEL-v3.8_kai"         \
                      toolchain=$TOOLCHAIN      \
                      +magisk                   \
                      +nohardening              \
